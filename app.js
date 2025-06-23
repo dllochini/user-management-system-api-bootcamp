@@ -1,6 +1,9 @@
 const express = require('express');
+const storage = require('node-persist');
+storage.init();//initialize storage
 const UserController = require('./routes/userRoutes')
 const app = express();
+
 //inbuilt middleware to pass the data
 app.use(express.json())//JSON Parser -> pass the data
 
