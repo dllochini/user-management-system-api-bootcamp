@@ -1,1 +1,10 @@
-{"key":"5","value":{"id":"5","name":"Harry","email":"fwfw@yahpppp.com","country":"Korea","password":"$2b$10$vrSngcBrIX9af5nRRLT/qOIFBPOA/rJNMwLPWAD1UfQ3tA9Uo3xmq"}}
+{
+  "key": "5",
+  "value": {
+    "id": "5",
+    "name": "Harry",
+    "email": "fwfw@yahpppp.com",
+    "country": "Korea",
+    "password": "$2b$10$vrSngcBrIX9af5nRRLT/qOIFBPOA/rJNMwLPWAD1UfQ3tA9Uo3xmq"
+  }
+}

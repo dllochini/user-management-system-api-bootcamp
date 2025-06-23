@@ -3,9 +3,12 @@ const storage = require('node-persist');
 storage.init();//initialize storage
 const UserController = require('./routes/userRoutes')
 const app = express();
+const cors = require('cors')
 
 //inbuilt middleware to pass the data
 app.use(express.json())//JSON Parser -> pass the data
+
+app.use(cors()) //third party middleware to handle req from frontend
 
 app.use('/api/v1/user/',UserController)
 
