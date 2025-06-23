@@ -60,10 +60,30 @@ const updateUserByID = async (req,res)=>{
     }
 }
 
+const loginUser = async(req,res)=>{
+    const {email,password} = req.body;
+    if(!email || !password)
+        return res.status(403).send({message: "All Fields are mandotory"})
+    const users = await storage.values();
+    const user = users.find(u => u.email === email);
+    if(user){
+        const result = await bcrypt.compare(password,user.password)
+        if(result){
+            return res.status(200).send("Login Successful")
+        }else{
+            return res.send("Invalid Creadentials")
+        }
+    }else{
+        return res.send(`${email} is not registered with us`)
+    }
+
+}
+
 module.exports = {
     getUser,
     getUserByID,
     addUser,
     deleteUserByID,
     updateUserByID,
+    loginUser,
 }

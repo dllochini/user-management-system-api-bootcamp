@@ -1,1 +1,10 @@
-{"key":"2","value":{"id":"2","name":"Luhara","email":"luhradik@gmail.com","country":"Sri Lanka","password":"$2b$10$UVppSuH0yOvqQXeG1As.deYan87kANQhV/IG2EToj8NTQURCdDrLa"}}
+{
+  "key": "2",
+  "value": {
+    "id": "2",
+    "name": "Luhara",
+    "email": "luhradik@gmail.com",
+    "country": "Sri Lanka",
+    "password": "$2b$10$UVppSuH0yOvqQXeG1As.deYan87kANQhV/IG2EToj8NTQURCdDrLa"
+  }
+}

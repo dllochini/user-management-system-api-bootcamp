@@ -1,1 +1,10 @@
-{"key":"3","value":{"id":"3","name":"Alex","email":"asdada@yahoo.com","country":"Italy","password":"$2b$10$Z3vp7Tr8SxPOEgXjTZeDCuR.VXR8q3gzLsns2eHvB3iKsHfOxBu1."}}
+{
+  "key": "3",
+  "value": {
+    "id": "3",
+    "name": "Alex",
+    "email": "asdada@yahoo.com",
+    "country": "Italy",
+    "password": "$2b$10$Z3vp7Tr8SxPOEgXjTZeDCuR.VXR8q3gzLsns2eHvB3iKsHfOxBu1."
+  }
+}
