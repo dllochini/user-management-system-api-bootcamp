@@ -1,6 +1,6 @@
 //all data related logic
 const storage = require('node-persist');
-
+const bcrypt = require('bcrypt')
 const getUser = async function(req,res){ 
     try {
         const values = await storage.values();//give you all values and it waits until you get the data
@@ -21,8 +21,9 @@ const getUserByID = async (req,res)=>{
 
 const addUser = (req,res)=>{
     // console.log(req.body); //this is form data coming from user
-    const {id,name,email,country} = req.body;
-    storage.setItem(id,{id,name,email,country}); //for nord-persist id should be string
+    const {id,name,email,country,password,} = req.body;
+    const hashPassword = bcrypt.hash(password,10)
+    storage.setItem(id,{id,name,email,country,password:hashPassword}); //for nord-persist id should be string
     //setItem function takes key as id anf full object as value
     res.status(201).send('New User Created')
 }
@@ -43,13 +44,15 @@ const updateUserByID = async (req,res)=>{
     const id = req.params.id;
     const userData = await storage.getItem(id);
     if(userData){
-        const {name,email,country} = req.body;
+        const {name,email,country,password} = req.body;
         if(name)
             userData.name=name
         if(email)
             userData.email=email
         if(country)
             userData.country=country
+        if(password)
+            userData.password = await bcrypt.hash(password,10)
         await storage.updateItem(id,userData)
         res.send(`User ${id} is updated successfully`)
     } else {
